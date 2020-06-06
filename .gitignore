@@ -131,3 +131,6 @@ yarn-error.log*
 #Ignore auto generated yarn and NPM files
 package-lock.json
 yarn.lock
+
+#Ignore expo folder
+ .expo/
