@@ -1,10 +1,10 @@
 import styled from 'styled-components/native';
 
-let AppContainerView = styled.View`
+let HomeScreenContainerView = styled.View`
     flex: 1;
 `;
 
-let AppHeaderContainerView = styled.View`
+let HomeScreenHeaderContainerView = styled.View`
     flex: 2;
 
     flex-direction: column;
@@ -12,9 +12,11 @@ let AppHeaderContainerView = styled.View`
     align-items: center;
 `;
 
+const HomeScreenHeader = styled.View``;
+
 const ImageBackgroundStyled = styled.ImageBackground`
     flex: 1;
-    justify-content: "center"
+    justify-content: "center";
 `;
 
 const WelcomeText = styled.Text`
@@ -35,17 +37,16 @@ let BlueSectionContainer = styled.View`
 `;
 
 let SafeAreaViewStyled = styled.SafeAreaView.attrs( (props) => ({
-    forceInset: { bottom: 'never' },
-}))`
-    flex: 1;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-self: stretch;
-    background-color: #F4F7F9;
-    padding: 0;
-    margin: 0
-`;
+        forceInset: { bottom: 'never' },
+    }))`
+        flex: 1;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-self: stretch;
+        background-color: #F4F7F9;
+        padding: 0;
+        margin: 0
+    `
+;
 
-
-
-export { AppContainerView, AppHeaderContainerView, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer };
+export { HomeScreenContainerView, HomeScreenHeaderContainerView, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer };
