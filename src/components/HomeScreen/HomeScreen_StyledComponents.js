@@ -10,6 +10,8 @@ let HomeScreenHeaderContainerView = styled.View`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    background-color: yellow;
 `;
 
 const HomeScreenHeader = styled.View``;

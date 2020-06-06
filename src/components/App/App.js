@@ -18,12 +18,12 @@ import * as Updates from 'expo-updates';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 //import styled components
-import { AppContainerView, AppHeaderContainerView, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled } from './App_StyledComponents.js';
+import { AppContainerView, WelcomeText, SafeAreaViewStyled } from './App_StyledComponents.js';
 
 //Import App/Page components
-import Header from './../Header/Header.js';
-import PageContent from './../PageContent/PageContent.js';
-import TabsFooter from './../TabsFooter/TabsFooter.js'
+// import Header from './../Header/Header.js';
+// import PageContent from './../PageContent/PageContent.js';
+// import TabsFooter from './../TabsFooter/TabsFooter.js'
 
 import HomeScreen from './../HomeScreen/HomeScreen.js';
 
@@ -43,7 +43,7 @@ class App extends Component {
             adUserInfo          :   null,
             appWidth            :   this.props.width,
 
-            irisLogoSource    :   require("./../../assets/images/CV-600x600-portal-red.png"),
+            // irisLogoSource    :   require("./../../assets/images/iris-logo-original.svg"),
             
             authLoading         :   null
         }; //end this.state object
