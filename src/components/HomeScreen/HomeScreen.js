@@ -3,11 +3,12 @@ import React from 'react';
 import { ImageBackground, Alert } from 'react-native';
 
 import { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainerArc,
-    CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, 
+    BottomHalfContainer, CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, 
         SafeAreaViewStyled  } from './HomeScreen_StyledComponents.js';
 
 import * as Svg from 'react-native-svg';
 
+import * as Animatable from 'react-native-animatable';
 
 import IrisLogo from './iris-logo-original.svg';
 
@@ -24,15 +25,18 @@ let HomeScreen = (props) => {
                     }
                 }
             > */}
-                <HomeScreenHeaderContainerView>
+                <HomeScreenHeaderContainerView as={Animatable.View} animation="fadeIn" duration={2000}>
                     <IrisLogo
                         width       =   { 150 }
                         height      =   { 150 }
                     />
                 </HomeScreenHeaderContainerView>
-                
-                <CreateAccountContainerArc/>
-                <CreateAccountContainer/>
+
+                <BottomHalfContainer>
+                    <CreateAccountContainerArc/>
+                    <CreateAccountContainer />
+                </BottomHalfContainer>
+
             {/* </ImageBackground> */}
         </HomeScreenContainerView>
     ); //end return statement

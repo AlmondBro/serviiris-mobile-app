@@ -1,7 +1,5 @@
 //Import React/React Native modules
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-
 import { StatusBar } from 'expo-status-bar';
 
 import AsyncStorage from '@react-native-community/async-storage';
@@ -12,15 +10,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Reactotron from 'reactotron-react-native';
 
-//Import utility functions
-import { dimensionsWidthHOC, navigationRef, navigate } from './../../utility-functions.js';
-
 import * as Updates from 'expo-updates';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 //import styled components
 import { AppContainerView, WelcomeText, SafeAreaViewStyled,StatusBarView } from './App_StyledComponents.js';
+
+//Import utility functions
+import { dimensionsWidthHOC, navigationRef, navigate } from './../../utility-functions.js';
 
 //Import App/Page components
 // import Header from './../Header/Header.js';
@@ -161,7 +159,7 @@ class App extends Component {
                     </SafeAreaViewStyled>
                 </SafeAreaProvider>
             </NavigationContainer>
-        ); //end return statementt
+        ); //end return statement
     } //end render() function
 } //end App class
 

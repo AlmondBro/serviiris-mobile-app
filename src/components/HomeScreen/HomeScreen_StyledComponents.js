@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 let HomeScreenContainerView = styled.View`
     flex: 1;
+    background-color: white;
 `;
 
 let HomeScreenHeaderContainerView = styled.View`
@@ -39,13 +40,19 @@ let BlueSectionContainer = styled.View`
     width: ${props => props.width ? props.width : "auto"};
 `;
 
+const BottomHalfContainer = styled.View`
+    flex: 0.8;
+
+`;
+
 const CreateAccountContainerArc = styled.View`
     width: 20%;
     height: 70;
               
     position : absolute;
     left: 40%;
-    top: 370;
+    bottom: 290;
+
     background-color: #7A40DB;
 
     border-radius: 35;
@@ -54,7 +61,7 @@ const CreateAccountContainerArc = styled.View`
 `;
 
 let CreateAccountContainer = styled.View`
-    flex: 0.8;
+    flex: 1;
     flex-direction: column;
     align-self: stretch;
     justify-content: flex-start;
@@ -77,8 +84,8 @@ let SafeAreaViewStyled = styled.SafeAreaView.attrs( (props) => ({
         align-self: stretch;
         background-color: #F4F7F9;
         padding: 0;
-        margin: 0
+        margin: 0;
     `
 ;
 
-export { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainerArc,CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer };
+export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer };

@@ -47,14 +47,10 @@ let SafeAreaViewStyled = styled.SafeAreaView.attrs( (props) => ({
 `;
 
 const StatusBarView = styled(SafeAreaViewStyled)`
-flex: 0;
-    /* flex: 0;
-    justify-content: center;
-    align-items: center; */
+    flex: 0;
+    flex-direction: row;
 
     background-color: white;
-/* 
-    border: 1px solid white; */
 `;
 
 export { StatusBarView, AppContainerView, AppHeaderContainerView, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer };
