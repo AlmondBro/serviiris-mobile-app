@@ -11,7 +11,7 @@ let HomeScreenHeaderContainerView = styled.View`
     justify-content: space-evenly;
     align-items: center;
 
-    background-color: yellow;
+    background-color: white;
 `;
 
 const HomeScreenHeader = styled.View``;
@@ -39,6 +39,20 @@ let BlueSectionContainer = styled.View`
     width: ${props => props.width ? props.width : "auto"};
 `;
 
+const CreateAccountContainerArc = styled.View`
+    width: 20%;
+    height: 70;
+              
+    position : absolute;
+    left: 40%;
+    top: 370;
+    background-color: #7A40DB;
+
+    border-radius: 35;
+
+    transform: scale(5, 1);
+`;
+
 let CreateAccountContainer = styled.View`
     flex: 0.8;
     flex-direction: column;
@@ -48,10 +62,10 @@ let CreateAccountContainer = styled.View`
     margin: 0;
     width: ${props => props.width ? props.width : "auto"};
 
-    background-color: purple;
+    background-color: #7A40DB;
 
-    border-top-left-radius: 25;
-    border-top-right-radius: 25;
+    /* border-top-left-radius: 25;
+    border-top-right-radius: 25; */
 `;
 
 let SafeAreaViewStyled = styled.SafeAreaView.attrs( (props) => ({
@@ -67,4 +81,4 @@ let SafeAreaViewStyled = styled.SafeAreaView.attrs( (props) => ({
     `
 ;
 
-export { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer };
+export { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainerArc,CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer };

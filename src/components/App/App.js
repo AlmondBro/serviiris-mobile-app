@@ -1,6 +1,8 @@
 //Import React/React Native modules
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+
+import { StatusBar } from 'expo-status-bar';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -18,7 +20,7 @@ import * as Updates from 'expo-updates';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 //import styled components
-import { AppContainerView, WelcomeText, SafeAreaViewStyled } from './App_StyledComponents.js';
+import { AppContainerView, WelcomeText, SafeAreaViewStyled,StatusBarView } from './App_StyledComponents.js';
 
 //Import App/Page components
 // import Header from './../Header/Header.js';
@@ -26,6 +28,7 @@ import { AppContainerView, WelcomeText, SafeAreaViewStyled } from './App_StyledC
 // import TabsFooter from './../TabsFooter/TabsFooter.js'
 
 import HomeScreen from './../HomeScreen/HomeScreen.js';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -115,11 +118,14 @@ class App extends Component {
         return (
             <NavigationContainer ref={navigationRef}>
                 <SafeAreaProvider>
-                    <StatusBar 
-                        backgroundColor="#F4F7F9" 
-                        barStyle="dark-content" 
-                        translucent={true} 
-                    />
+                    <StatusBarView>
+                        <StatusBar 
+                            backgroundColor="#00000" 
+                            barStyle="light-content" 
+                            translucent={true} 
+                        />
+                    </StatusBarView>
+                  
                     { /* The following is a technique using two SafeAreaViews to have the
                         statusbar/top padding be a different color than the bottom padding. 
                         SafeAreaViews are only applicable on iOs 11+ on >iPhone X 
