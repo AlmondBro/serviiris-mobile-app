@@ -3,13 +3,13 @@ import React from 'react';
 import { ImageBackground, Alert } from 'react-native';
 
 import { HomeScreenContainerView, HomeScreenHeaderContainerView, 
-        HomeScreenHeader, ImageBackgroundStyled, WelcomeText, 
-        SafeAreaViewStyled } from './HomeScreen_StyledComponents.js';
+    CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, 
+        SafeAreaViewStyled  } from './HomeScreen_StyledComponents.js';
 
 
         import * as Svg from 'react-native-svg';
 
-        
+
 import IrisLogo from './iris-logo-original.svg';
 
 let HomeScreen = (props) => {
@@ -27,11 +27,14 @@ let HomeScreen = (props) => {
             > */}
                 <HomeScreenHeaderContainerView>
                     <IrisLogo
-                        width       =   { 100 }
-                        height      =   { 100 }
+                        width       =   { 150 }
+                        height      =   { 150 }
                     />
                     
                 </HomeScreenHeaderContainerView>
+                <CreateAccountContainer>
+            
+                </CreateAccountContainer>
             {/* </ImageBackground> */}
         </HomeScreenContainerView>
     ); //end return statement
