@@ -25,7 +25,7 @@ import { dimensionsWidthHOC, navigationRef, navigate } from './../../utility-fun
 // import PageContent from './../PageContent/PageContent.js';
 // import TabsFooter from './../TabsFooter/TabsFooter.js'
 
-import HomeScreen from './../HomeScreen/HomeScreen.js';
+import LogInScreen from '../LogInScreen/LogInScreen.js';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -138,20 +138,18 @@ class App extends Component {
                                                         }
                                                     }
                             >
-                              
+    
                                 <Screen 
                                     name="Home" 
                                     // options={{ title: null, headerShown: false }}
                                 >
-                                    { props => <HomeScreen 
+                                    { props => <LogInScreen 
                                                     {...props}
                                                     width               =   { this.state.appWidth}
                                                     authLoading         =   {   this.state.authLoading  }
                                                 /> 
                                     }
                                 </Screen>
-
-    
                             </Navigator>
                         </AppContainerView>
                     </SafeAreaViewStyled>

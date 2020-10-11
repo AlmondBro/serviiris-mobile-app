@@ -4,15 +4,15 @@ import * as Animatable from 'react-native-animatable';
 
 import IrisLogo from './iris-logo-original.svg';
 
-import { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainerArc,
+import { LogInScreenContainerView, LogInScreenHeaderContainerView, CreateAccountContainerArc,
         BottomHalfContainer, CreateAccountContainer, LogInButton, RegisterWith,  
         SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText,RegisterButton
-    } from './HomeScreen_StyledComponents.js';
+    } from './LogInScreenStyledComponents.js';
 
-let HomeScreen = ({ width }) => {
+let LogInScreen = ({ width }) => {
     return (
-        <HomeScreenContainerView>
-                <HomeScreenHeaderContainerView 
+        <LogInScreenContainerView>
+                <LogInScreenHeaderContainerView 
                     as          =   { Animatable.View } 
                     animation   =   "fadeIn" 
                     duration    =   { 2000 }
@@ -21,7 +21,7 @@ let HomeScreen = ({ width }) => {
                         width       =   { 150 }
                         height      =   { 150 }
                     />
-                </HomeScreenHeaderContainerView>
+                </LogInScreenHeaderContainerView>
 
                 <BottomHalfContainer>
                     <CreateAccountContainerArc/>
@@ -43,8 +43,8 @@ let HomeScreen = ({ width }) => {
 
                     </CreateAccountContainer>
                 </BottomHalfContainer>
-        </HomeScreenContainerView>
+        </LogInScreenContainerView>
     ); //end return statement
-}; //end HomeScreen()
+}; //end LogInScreen()
 
-export default HomeScreen;
+export default LogInScreen;

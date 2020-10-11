@@ -4,12 +4,12 @@ import { TouchableOpacity, StyleSheet } from 'react-native';
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'; 
 import styled from 'styled-components/native';
 
-let HomeScreenContainerView = styled.View`
+let LogInScreenContainerView = styled.View`
     flex: 1;
     background-color: white;
 `;
 
-let HomeScreenHeaderContainerView = styled.View`
+let LogInScreenHeaderContainerView = styled.View`
     flex: 1;
 
     flex-direction: column;
@@ -217,4 +217,4 @@ const LogInButton = ({ children,...props }) => {
     ); //end return statement
 }; //end LogInButton
 
-export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith, SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText, RegisterButton };
+export { LogInScreenContainerView, LogInScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith, SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText, RegisterButton };
