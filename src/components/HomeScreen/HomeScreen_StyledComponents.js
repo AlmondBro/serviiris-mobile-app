@@ -1,5 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
+
+import { FontAwesome } from '@expo/vector-icons'; 
 import styled from 'styled-components/native';
 
 let HomeScreenContainerView = styled.View`
@@ -161,6 +163,40 @@ const RegisterWith = ({width, children }) => {
         </RegisterWithContainer>
     ); //end return statement
 }; //end RegisterWith
+
+const SocialMediaButtonContainer = styled.View`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+`;
+
+const SocialMediaIconContainer= styled.View`
+    background-color: white;
+
+    padding-top: 10;
+    padding-bottom: 10;
+    padding-left: 15;
+    padding-right: 15;
+
+    border-radius: 100;
+    
+`;
+
+const SocialMediaButton = ({iconName, onPress,...props}) => {
+    return (
+        <TouchableOpacity
+            activeOpacity={0.8}
+            underlayColor="black"
+            onPress={ onPress }
+        >
+            <SocialMediaIconContainer>
+                    <FontAwesome name={iconName} size={30} color="#7A40DB" />
+            </SocialMediaIconContainer>
+        </TouchableOpacity>
+    )
+};
+
 const LogInButton = ({ children,...props }) => {
     return (
         <TouchableOpacity   
@@ -178,4 +214,4 @@ const LogInButton = ({ children,...props }) => {
     ); //end return statement
 }; //end LogInButton
 
-export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith };
+export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith, SocialMediaButtonContainer, SocialMediaButton };

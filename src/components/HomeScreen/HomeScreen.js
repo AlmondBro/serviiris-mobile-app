@@ -2,15 +2,16 @@ import React from 'react';
 
 import { ImageBackground, Alert, TouchableOpacity, View, Text } from 'react-native';
 
-import { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainerArc,
-    BottomHalfContainer, CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, 
-        SafeAreaViewStyled, LogInButton, LogInText, RegisterWithLine, RegisterWith } from './HomeScreen_StyledComponents.js';
-
 import * as Svg from 'react-native-svg';
 
 import * as Animatable from 'react-native-animatable';
 
 import IrisLogo from './iris-logo-original.svg';
+
+import { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainerArc,
+    BottomHalfContainer, CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, 
+        SafeAreaViewStyled, LogInButton, LogInText, RegisterWithLine, RegisterWith,
+         SocialMediaButtonContainer, SocialMediaButton } from './HomeScreen_StyledComponents.js';
 
 let HomeScreen = ({width, ...props}) => {
     return (
@@ -40,6 +41,27 @@ let HomeScreen = ({width, ...props}) => {
                         <RegisterWith width={width}>
                             o ingresa con
                         </RegisterWith>
+                       <SocialMediaButtonContainer width={width}>
+                            <SocialMediaButton iconName="facebook" />
+                            <SocialMediaButton iconName="google" />
+                            <SocialMediaButton iconName="apple" />
+
+                           {/* <TouchableOpacity>
+                                <SocialMediaIconContainer>
+                                        <FontAwesome name="google" size={30} color="#7A40DB" />
+                                </SocialMediaIconContainer>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity>
+                            <SocialMediaIconContainer>
+                                    <FontAwesome name="apple" size={30} color="#7A40DB" />
+                                </SocialMediaIconContainer>
+                            </TouchableOpacity> */}
+
+                         
+
+                       </SocialMediaButtonContainer>
+                       
                     </CreateAccountContainer>
         
                 </BottomHalfContainer>
