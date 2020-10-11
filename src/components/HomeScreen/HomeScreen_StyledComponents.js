@@ -117,12 +117,13 @@ const RegisterWithContainer = styled.View`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 
     width: ${props => props.width || "100%"};
 `;
 const RegisterWithLine = styled.View`
     position: relative;
-    bottom: 10;
+    /* bottom: 10; */
 
     border-bottom-color: white;
     border-bottom-width: ${StyleSheet.hairlineWidth};
@@ -151,11 +152,11 @@ const RegisterWithText = styled.Text`
     /* width: 35%; */
 `;
 
-const RegisterWith = ({width,...props}) => {
+const RegisterWith = ({width, children }) => {
     return (
         <RegisterWithContainer width={width}>
             <RegisterWithLine/>
-            <RegisterWithText>o ingresa con</RegisterWithText>
+            <RegisterWithText>{ children }</RegisterWithText>
             <RegisterWithLine/>
         </RegisterWithContainer>
     ); //end return statement

@@ -37,8 +37,9 @@ let HomeScreen = ({width, ...props}) => {
                     <CreateAccountContainerArc/>
                     <CreateAccountContainer>
                         <LogInButton>Iniciar Sesión</LogInButton>
-                        <RegisterWith width={width}/>
-
+                        <RegisterWith width={width}>
+                            o ingresa con
+                        </RegisterWith>
                     </CreateAccountContainer>
         
                 </BottomHalfContainer>
