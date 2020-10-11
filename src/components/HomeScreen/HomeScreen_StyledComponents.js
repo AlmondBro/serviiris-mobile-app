@@ -154,6 +154,31 @@ const SocialMediaIconContainer= styled.View`
     
 `;
 
+const AlreadyHaveAnAccountText = styled.Text`
+    color: white;
+`;
+
+const RegisterText = styled.Text`
+    color: white;
+
+    font-size: 16;
+    font-weight:  bold;
+`;
+
+const RegisterButton = ({ children,onPress }) => {
+    return (
+        <TouchableOpacity
+            activeOpacity={0.8}
+            underlayColor="black"
+            onPress={ onPress }
+        >  
+            <RegisterText>
+                { children }
+            </RegisterText>
+        </TouchableOpacity> 
+    ); //end return
+}; //end RegisterButton()
+
 const SocialMediaButton = ({iconName, onPress,...props}) => {
     return (
         <TouchableOpacity
@@ -185,4 +210,4 @@ const LogInButton = ({ children,...props }) => {
     ); //end return statement
 }; //end LogInButton
 
-export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith, SocialMediaButtonContainer, SocialMediaButton };
+export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith, SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText, RegisterButton };
