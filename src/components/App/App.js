@@ -148,6 +148,7 @@ class App extends Component {
                                 >
                                     { props => <HomeScreen 
                                                     {...props}
+                                                    width               =   { this.state.appWidth}
                                                     authLoading         =   {   this.state.authLoading  }
                                                 /> 
                                     }

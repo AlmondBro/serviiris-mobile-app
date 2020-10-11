@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ImageBackground, Alert, TouchableOpacity } from 'react-native';
+import { ImageBackground, Alert, TouchableOpacity, View, Text } from 'react-native';
 
 import { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainerArc,
     BottomHalfContainer, CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, 
-        SafeAreaViewStyled, LogInButton, LogInText } from './HomeScreen_StyledComponents.js';
+        SafeAreaViewStyled, LogInButton, LogInText, RegisterWithLine, RegisterWith } from './HomeScreen_StyledComponents.js';
 
 import * as Svg from 'react-native-svg';
 
@@ -12,7 +12,7 @@ import * as Animatable from 'react-native-animatable';
 
 import IrisLogo from './iris-logo-original.svg';
 
-let HomeScreen = (props) => {
+let HomeScreen = ({width, ...props}) => {
     return (
         <HomeScreenContainerView>
             {/* <ImageBackground
@@ -32,11 +32,15 @@ let HomeScreen = (props) => {
                     />
                 </HomeScreenHeaderContainerView>
 
+
                 <BottomHalfContainer>
                     <CreateAccountContainerArc/>
                     <CreateAccountContainer>
                         <LogInButton>Iniciar Sesión</LogInButton>
+                        <RegisterWith width={width}/>
+
                     </CreateAccountContainer>
+        
                 </BottomHalfContainer>
 
             {/* </ImageBackground> */}
