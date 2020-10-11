@@ -26,11 +26,8 @@ import { dimensionsWidthHOC, navigationRef, navigate } from './../../utility-fun
 // import TabsFooter from './../TabsFooter/TabsFooter.js'
 
 import HomeScreen from './../HomeScreen/HomeScreen.js';
-import { ScrollView } from 'react-native-gesture-handler';
 
 const { Navigator, Screen } = createStackNavigator();
-
-//const backgroundImage = require('./../../assets/images/theCVway-white.png');
 
 const isDev = __DEV__;
 
@@ -75,7 +72,7 @@ class App extends Component {
           } catch (e) {
             Reactotron.log("setLogOnUserData() Error:\t" + JSON.stringify(error));
           }
-    };
+    }; //end setLogOnUserData()
 
     clearLogOnUserData = async () => {
         try {
@@ -85,7 +82,7 @@ class App extends Component {
         }
       
         console.log('Done.')
-      }
+    }; //end clearLogOnUserData()
 
     componentDidMount = () => {
         const checkforUpdatesDev = false;
