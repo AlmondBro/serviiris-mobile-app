@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ImageBackground, Alert } from 'react-native';
+import { ImageBackground, Alert, TouchableOpacity } from 'react-native';
 
 import { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainerArc,
     BottomHalfContainer, CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, 
-        SafeAreaViewStyled  } from './HomeScreen_StyledComponents.js';
+        SafeAreaViewStyled, LogInButton, LogInText } from './HomeScreen_StyledComponents.js';
 
 import * as Svg from 'react-native-svg';
 
@@ -34,7 +34,9 @@ let HomeScreen = (props) => {
 
                 <BottomHalfContainer>
                     <CreateAccountContainerArc/>
-                    <CreateAccountContainer />
+                    <CreateAccountContainer>
+                        <LogInButton>Iniciar Sesión</LogInButton>
+                    </CreateAccountContainer>
                 </BottomHalfContainer>
 
             {/* </ImageBackground> */}

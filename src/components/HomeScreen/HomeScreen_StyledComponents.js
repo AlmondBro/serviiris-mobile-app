@@ -1,3 +1,5 @@
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 
 let HomeScreenContainerView = styled.View`
@@ -62,11 +64,13 @@ const CreateAccountContainerArc = styled.View`
 
 let CreateAccountContainer = styled.View`
     flex: 1;
-    flex-direction: column;
-    align-self: stretch;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+
     padding: 0;
     margin: 0;
+
     width: ${props => props.width ? props.width : "auto"};
 
     background-color: #7A40DB;
@@ -74,6 +78,41 @@ let CreateAccountContainer = styled.View`
     /* border-top-left-radius: 25;
     border-top-right-radius: 25; */
 `;
+
+const LogInButtonContainer = styled.View`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: white;
+    border-radius: 10;
+
+    height: 70;
+    width: 200;
+`;
+
+const LogInText = styled.Text`
+    text-align: center;
+    color: #7A40DB;
+    font-size: 20;
+`;
+
+const LogInButton = ({ children,...props }) => {
+    return (
+        <TouchableOpacity   
+            activeOpacity={0.8}
+            underlayColor="black"
+            onPress={() => alert('Pressed!')}
+        >
+            <LogInButtonContainer
+            >
+                <LogInText>
+                    { children }
+                </LogInText>
+            </LogInButtonContainer>
+        </TouchableOpacity>
+    ); //end return statement
+}; //end LogInButton
 
 let SafeAreaViewStyled = styled.SafeAreaView.attrs( (props) => ({
         forceInset: { bottom: 'never' },
@@ -88,4 +127,4 @@ let SafeAreaViewStyled = styled.SafeAreaView.attrs( (props) => ({
     `
 ;
 
-export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer };
+export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer, LogInButton };
