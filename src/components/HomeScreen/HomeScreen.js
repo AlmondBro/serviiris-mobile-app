@@ -5,8 +5,8 @@ import * as Animatable from 'react-native-animatable';
 import IrisLogo from './iris-logo-original.svg';
 
 import { HomeScreenContainerView, HomeScreenHeaderContainerView, CreateAccountContainerArc,
-        BottomHalfContainer, CreateAccountContainer, LogInButton, RegisterWith, SocialMediaButtonContainer, 
-        SocialMediaButton, AlreadyHaveAnAccountText,RegisterButton
+        BottomHalfContainer, CreateAccountContainer, LogInButton, RegisterWith,  
+        SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText,RegisterButton
     } from './HomeScreen_StyledComponents.js';
 
 let HomeScreen = ({ width }) => {

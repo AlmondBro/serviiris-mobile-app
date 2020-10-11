@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 
-import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'; 
 import styled from 'styled-components/native';
 
 let HomeScreenContainerView = styled.View`
@@ -30,7 +30,6 @@ let BlueSectionContainer = styled.View`
 
 const BottomHalfContainer = styled.View`
     flex: 0.8;
-
 `;
 
 const CreateAccountContainerArc = styled.View`
@@ -67,20 +66,27 @@ let CreateAccountContainer = styled.View`
 
 const LogInButtonContainer = styled.View`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 
     background-color: white;
     border-radius: 10;
 
-    height: 70;
-    width: 200;
+    height: auto;
+    width: auto;
+
+    padding-top:  15;
+    padding-bottom: 15;
+    padding-left:  10;
+    padding-right: 10;
 `;
 
 const LogInText = styled.Text`
     text-align: center;
     color: #7A40DB;
     font-size: 20;
+
+    margin-right: 7;
 `;
 
 const RegisterWithContainer = styled.View`
@@ -205,6 +211,7 @@ const LogInButton = ({ children,...props }) => {
                 <LogInText>
                     { children }
                 </LogInText>
+                <FontAwesome5 name="phone" size={30} color="#7A40DB" />
             </LogInButtonContainer>
         </TouchableOpacity>
     ); //end return statement
