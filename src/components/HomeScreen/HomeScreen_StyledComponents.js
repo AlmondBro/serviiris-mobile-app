@@ -122,10 +122,12 @@ const RegisterWithContainer = styled.View`
 `;
 const RegisterWithLine = styled.View`
     position: relative;
-    bottom: 15;
+    bottom: 10;
 
     border-bottom-color: white;
-    border-bottom-width: 1;
+    border-bottom-width: ${StyleSheet.hairlineWidth};
+
+    /* vertical-align: middle; */
     /* align-self:  stretch; */
     width: 25%;
 
