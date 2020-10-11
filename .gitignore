@@ -133,6 +133,7 @@ package-lock.json
 yarn.lock
 
 #Ignore expo folder
+.expo
  .expo/
  .expo-shared/
  .expo/*
