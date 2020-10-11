@@ -19,22 +19,6 @@ let HomeScreenHeaderContainerView = styled.View`
     background-color: white;
 `;
 
-const HomeScreenHeader = styled.View``;
-
-const ImageBackgroundStyled = styled.ImageBackground`
-    flex: 1;
-    justify-content: "center";
-`;
-
-
-const WelcomeText = styled.Text`
-    color: #B41A1F;
-    font-size: 25;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`;
-
 let BlueSectionContainer = styled.View`
     flex-direction: column;
     align-self: stretch;
@@ -98,19 +82,6 @@ const LogInText = styled.Text`
     color: #7A40DB;
     font-size: 20;
 `;
-
-let SafeAreaViewStyled = styled.SafeAreaView.attrs( (props) => ({
-    forceInset: { bottom: 'never' },
-}))`
-    flex: 1;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-self: stretch;
-    background-color: #F4F7F9;
-    padding: 0;
-    margin: 0;
-`
-;
 
 const RegisterWithContainer = styled.View`
     position: relative;
@@ -214,4 +185,4 @@ const LogInButton = ({ children,...props }) => {
     ); //end return statement
 }; //end LogInButton
 
-export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, HomeScreenHeader, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith, SocialMediaButtonContainer, SocialMediaButton };
+export { HomeScreenContainerView, HomeScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith, SocialMediaButtonContainer, SocialMediaButton };
