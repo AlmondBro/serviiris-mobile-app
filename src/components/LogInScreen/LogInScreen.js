@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import * as Animatable from 'react-native-animatable';
 
@@ -9,8 +9,14 @@ import { LogInScreenContainerView, LogInScreenHeaderContainerView, CreateAccount
         SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText,RegisterTouchableText
     } from './LogInScreenStyledComponents.js';
 
-let LogInScreen = ({ width, navigation }) => {
+let LogInScreen = ({ width, showAppHeader, showFooter, navigation, route }) => {
     const { navigate } = navigation;
+
+    useEffect(() => {
+        showAppHeader(false);
+        showFooter(false);
+        console.log(route.name);
+    }, []);
 
     return (
         <LogInScreenContainerView>

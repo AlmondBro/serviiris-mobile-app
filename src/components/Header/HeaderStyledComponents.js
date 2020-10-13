@@ -12,7 +12,7 @@ const HeaderContainer = styled.View`
     width: ${props => props.width} ;
     background-color: white;
 
-    border-color: red;
+    border-color: transparent;
     border-bottom-width: 1px;
 `;
 
@@ -53,9 +53,11 @@ const NotificationsButton = () => {
     ); //end return statement
 }; //end  NotificationsButton
 
-const AvatarButton = () => {
+const AvatarButton = ({ onPress }) => {
     return (
-        <TouchableHighlight>
+        <TouchableHighlight 
+            onPress =   { onPress }
+        >
             <AvatarIconContainer>
                 <FontAwesome name="user-circle" size={35} color="#7A40DB" />
             </AvatarIconContainer>

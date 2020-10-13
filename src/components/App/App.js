@@ -18,7 +18,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AppContainerView, SafeAreaViewStyled,StatusBarView } from './App_StyledComponents.js';
 
 //Import utility functions
-import { dimensionsWidthHOC, navigationRef, navigate } from './../../utility-functions.js';
+import { dimensionsWidthHOC, navigationRef, navigate, goBack } from './../../utility-functions.js';
 
 //Import App/Page components
 // import Header from './../Header/Header.js';
@@ -157,6 +157,7 @@ class App extends Component {
                             this.state.showAppHeader ? (
                                 <Header
                                     width   =   { this.state.appWidth }
+                                    goBack  =   { goBack }
                                 />
                             ) : null
                         }
@@ -174,6 +175,9 @@ class App extends Component {
                                                     {...props}
                                                     width               =   { this.state.appWidth}
                                                     authLoading         =   {   this.state.authLoading  }
+
+                                                    showAppHeader       =   { this.showAppHeader }
+                                                    showFooter          =   { this.showFooter }
                                                 /> 
                                     }
                                 </Screen>
@@ -185,8 +189,10 @@ class App extends Component {
                                                     {...props}
                                                     width               =   { this.state.appWidth}
                                                     authLoading         =   {  this.state.authLoading  }
+
                                                     showAppHeader       =   { this.showAppHeader }
                                                     showFooter          =   { this.showFooter }
+
                                                     ReactotronDebug     =   { ReactotronDebug }
                                                 /> 
                                     }
