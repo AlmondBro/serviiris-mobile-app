@@ -1,8 +1,9 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import { TouchableHighlight, StyleSheet } from 'react-native';
 
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'; 
 import styled from 'styled-components/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 let LogInScreenContainerView = styled.View`
     flex: 1;
@@ -171,7 +172,7 @@ const RegisterText = styled.Text`
     font-weight:  bold;
 `;
 
-const RegisterButton = ({ children,onPress }) => {
+const RegisterTouchableText = ({ children,onPress }) => {
     return (
         <TouchableOpacity
             activeOpacity={0.8}
@@ -187,7 +188,7 @@ const RegisterButton = ({ children,onPress }) => {
 
 const SocialMediaButton = ({iconName, onPress,...props}) => {
     return (
-        <TouchableOpacity
+        <TouchableHighlight
             activeOpacity={0.8}
             underlayColor="black"
             onPress={ onPress }
@@ -195,7 +196,7 @@ const SocialMediaButton = ({iconName, onPress,...props}) => {
             <SocialMediaIconContainer>
                     <FontAwesome name={iconName} size={30} color="#7A40DB" />
             </SocialMediaIconContainer>
-        </TouchableOpacity>
+        </TouchableHighlight>
     )
 };
 
@@ -217,4 +218,4 @@ const LogInButton = ({ children,...props }) => {
     ); //end return statement
 }; //end LogInButton
 
-export { LogInScreenContainerView, LogInScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith, SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText, RegisterButton };
+export { LogInScreenContainerView, LogInScreenHeaderContainerView, BottomHalfContainer, CreateAccountContainerArc,CreateAccountContainer, BlueSectionContainer, LogInButton, RegisterWithLine, RegisterWith, SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText, RegisterTouchableText };

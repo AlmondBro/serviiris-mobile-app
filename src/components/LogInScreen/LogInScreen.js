@@ -6,7 +6,7 @@ import IrisLogo from './iris-logo-original.svg';
 
 import { LogInScreenContainerView, LogInScreenHeaderContainerView, CreateAccountContainerArc,
         BottomHalfContainer, CreateAccountContainer, LogInButton, RegisterWith,  
-        SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText,RegisterButton
+        SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText,RegisterTouchableText
     } from './LogInScreenStyledComponents.js';
 
 let LogInScreen = ({ width }) => {
@@ -39,7 +39,7 @@ let LogInScreen = ({ width }) => {
                        </SocialMediaButtonContainer>
 
                         <AlreadyHaveAnAccountText>Ya tienes cuenta?</AlreadyHaveAnAccountText>
-                        <RegisterButton>Regístrate</RegisterButton>
+                        <RegisterTouchableText>Regístrate</RegisterTouchableText>
 
                     </CreateAccountContainer>
                 </BottomHalfContainer>
