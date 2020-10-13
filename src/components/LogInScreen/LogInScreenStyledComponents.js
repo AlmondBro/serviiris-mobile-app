@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableHighlight, StyleSheet } from 'react-native';
+import { Platform, TouchableHighlight, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import styled from 'styled-components/native';
@@ -31,6 +31,8 @@ let BlueSectionContainer = styled.View`
 `;
 
 const BottomHalfContainer = styled.View`
+    position: relative;
+    
     flex: 0.8;
 `;
 
@@ -40,7 +42,8 @@ const CreateAccountContainerArc = styled.View`
               
     position : absolute;
     left: 40%;
-    bottom: 290;
+    bottom: ${Platform.OS === 'ios' ? 290 : 270};
+    /* 290 */
 
     background-color: #7A40DB;
 
