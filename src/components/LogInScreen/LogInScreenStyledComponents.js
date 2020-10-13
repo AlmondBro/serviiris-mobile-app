@@ -200,7 +200,7 @@ const SocialMediaButton = ({iconName, onPress,...props}) => {
     )
 };
 
-const LogInButton = ({ children, onPress, ...props }) => {
+const LogInButton = ({ children, onPress }) => {
     return (
         <TouchableOpacity   
             activeOpacity={0.8}
