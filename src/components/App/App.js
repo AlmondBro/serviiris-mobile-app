@@ -15,7 +15,7 @@ import * as Updates from 'expo-updates';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 //import styled components
-import { AppContainerView, WelcomeText, SafeAreaViewStyled,StatusBarView } from './App_StyledComponents.js';
+import { AppContainerView, SafeAreaViewStyled,StatusBarView } from './App_StyledComponents.js';
 
 //Import utility functions
 import { dimensionsWidthHOC, navigationRef, navigate } from './../../utility-functions.js';
@@ -110,6 +110,12 @@ class App extends Component {
     }; //end componentDidMount
 
     render = () => {
+        const navigatorScreenOptions =   { 
+            title: null, 
+            headerShown: false,
+            gestureEnabled: false,
+        }; 
+
         return (
             <NavigationContainer ref={navigationRef}>
                 <SafeAreaProvider>
@@ -131,12 +137,7 @@ class App extends Component {
                         <AppContainerView>
                             <Navigator
                                 headerMode      = "none"
-                                screenOptions   =   {   { 
-                                                            title: null, 
-                                                            headerShown: false,
-                                                            gestureEnabled: false,
-                                                        }
-                                                    }
+                                screenOptions   =   {  navigatorScreenOptions}
                             >
     
                                 <Screen 

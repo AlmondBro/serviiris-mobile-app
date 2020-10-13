@@ -12,18 +12,6 @@ let AppHeaderContainerView = styled.View`
     align-items: center;
 `;
 
-const ImageBackgroundStyled = styled.ImageBackground`
-    flex: 1;
-    justify-content: "center";
-`;
-
-const WelcomeText = styled.Text`
-    color: #B41A1F;
-    font-size: 25;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`;
 
 let BlueSectionContainer = styled.View`
     flex-direction: column;
@@ -53,4 +41,4 @@ const StatusBarView = styled(SafeAreaViewStyled)`
     background-color: white;
 `;
 
-export { StatusBarView, AppContainerView, AppHeaderContainerView, ImageBackgroundStyled, WelcomeText, SafeAreaViewStyled, BlueSectionContainer };
+export { StatusBarView, AppContainerView, AppHeaderContainerView, SafeAreaViewStyled, BlueSectionContainer };
