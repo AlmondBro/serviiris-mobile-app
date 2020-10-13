@@ -15,17 +15,23 @@ import * as Updates from 'expo-updates';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 //import styled components
-import { AppContainerView, WelcomeText, SafeAreaViewStyled,StatusBarView } from './App_StyledComponents.js';
+import { AppContainerView, SafeAreaViewStyled,StatusBarView } from './App_StyledComponents.js';
 
 //Import utility functions
-import { dimensionsWidthHOC, navigationRef, navigate } from './../../utility-functions.js';
+import { dimensionsWidthHOC, navigationRef, navigate, goBack } from './../../utility-functions.js';
 
 //Import App/Page components
 // import Header from './../Header/Header.js';
 // import PageContent from './../PageContent/PageContent.js';
 // import TabsFooter from './../TabsFooter/TabsFooter.js'
 
-import LogInScreen from '../LogInScreen/LogInScreen.js';
+//Import screens
+import LogInScreen from './../LogInScreen/LogInScreen.js';
+import MainScreen from './../MainScreen/MainScreen.js';
+
+//Import Header
+import Header from './../Header/Header.js';
+import Footer from './../Footer/Footer.js';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -40,6 +46,8 @@ class App extends Component {
             showUpdate          :   false, 
             adUserInfo          :   null,
             appWidth            :   this.props.width,
+            showAppHeader       :   false,
+            showFooter          :   false,
 
             // irisLogoSource    :   require("./../../assets/images/iris-logo-original.svg"),
             
@@ -84,6 +92,17 @@ class App extends Component {
         console.log('Done.')
     }; //end clearLogOnUserData()
 
+    showAppHeader = (showAppHeader) =>  {
+        this.setState({ showAppHeader : showAppHeader });
+        return;
+    }; //end showAppHeader()
+
+
+    showFooter = (showFooter) =>  {
+        this.setState({ showFooter : showFooter });
+        return;
+    }; //end showAppHeader()
+
     componentDidMount = () => {
         const checkforUpdatesDev = false;
         
@@ -110,6 +129,12 @@ class App extends Component {
     }; //end componentDidMount
 
     render = () => {
+        const navigatorScreenOptions =   { 
+            title: null, 
+            headerShown: false,
+            gestureEnabled: false,
+        }; 
+
         return (
             <NavigationContainer ref={navigationRef}>
                 <SafeAreaProvider>
@@ -128,30 +153,57 @@ class App extends Component {
                         Source: https://stackoverflow.com/questions/47725607/react-native-safeareaview-background-color-how-to-assign-two-different-backgro
                     */ }
                     <SafeAreaViewStyled>
+                        {
+                            this.state.showAppHeader ? (
+                                <Header
+                                    width   =   { this.state.appWidth }
+                                    goBack  =   { goBack }
+                                />
+                            ) : null
+                        }
+                       
                         <AppContainerView>
                             <Navigator
                                 headerMode      = "none"
-                                screenOptions   =   {   { 
-                                                            title: null, 
-                                                            headerShown: false,
-                                                            gestureEnabled: false,
-                                                        }
-                                                    }
+                                screenOptions   =   { navigatorScreenOptions }
                             >
     
                                 <Screen 
                                     name="Home" 
-                                    // options={{ title: null, headerShown: false }}
                                 >
                                     { props => <LogInScreen 
                                                     {...props}
                                                     width               =   { this.state.appWidth}
                                                     authLoading         =   {   this.state.authLoading  }
+
+                                                    showAppHeader       =   { this.showAppHeader }
+                                                    showFooter          =   { this.showFooter }
+                                                /> 
+                                    }
+                                </Screen>
+                                <Screen 
+                                    name="Main" 
+                                    options={{ title: "Main", headerShown: true }}
+                                >
+                                    { props => <MainScreen 
+                                                    {...props}
+                                                    width               =   { this.state.appWidth}
+                                                    authLoading         =   {  this.state.authLoading  }
+
+                                                    showAppHeader       =   { this.showAppHeader }
+                                                    showFooter          =   { this.showFooter }
+
+                                                    ReactotronDebug     =   { ReactotronDebug }
                                                 /> 
                                     }
                                 </Screen>
                             </Navigator>
                         </AppContainerView>
+                        {
+                            this.state.showFooter ? (
+                                <Footer/> 
+                            ) : null
+                        }
                     </SafeAreaViewStyled>
                 </SafeAreaProvider>
             </NavigationContainer>

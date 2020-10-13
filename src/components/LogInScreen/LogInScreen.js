@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import * as Animatable from 'react-native-animatable';
 
@@ -6,10 +6,18 @@ import IrisLogo from './iris-logo-original.svg';
 
 import { LogInScreenContainerView, LogInScreenHeaderContainerView, CreateAccountContainerArc,
         BottomHalfContainer, CreateAccountContainer, LogInButton, RegisterWith,  
-        SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText,RegisterButton
+        SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText,RegisterTouchableText
     } from './LogInScreenStyledComponents.js';
 
-let LogInScreen = ({ width }) => {
+let LogInScreen = ({ width, showAppHeader, showFooter, navigation, route }) => {
+    const { navigate } = navigation;
+
+    useEffect(() => {
+        showAppHeader(false);
+        showFooter(false);
+        console.log(route.name);
+    }, []);
+
     return (
         <LogInScreenContainerView>
                 <LogInScreenHeaderContainerView 
@@ -26,7 +34,11 @@ let LogInScreen = ({ width }) => {
                 <BottomHalfContainer>
                     <CreateAccountContainerArc/>
                     <CreateAccountContainer>
-                        <LogInButton>Iniciar Sesión</LogInButton>
+                        <LogInButton
+                            onPress={ () =>  navigate('Main') } 
+                        >
+                            Iniciar Sesión
+                        </LogInButton>
 
                         <RegisterWith width={width}>
                             o ingresa con
@@ -39,7 +51,7 @@ let LogInScreen = ({ width }) => {
                        </SocialMediaButtonContainer>
 
                         <AlreadyHaveAnAccountText>Ya tienes cuenta?</AlreadyHaveAnAccountText>
-                        <RegisterButton>Regístrate</RegisterButton>
+                        <RegisterTouchableText >Regístrate</RegisterTouchableText>
 
                     </CreateAccountContainer>
                 </BottomHalfContainer>

@@ -10,6 +10,10 @@ const navigate = (name, params) => {
     return navigationRef.current?.navigate(name, params);
 }
 
+const goBack = (name, params) => {
+    return navigationRef.current?.goBack();
+};
+
 /* 
     Use the windows dimensions module from the react community if the 
     platform is android, since the native useWindowDimensions() renders 
@@ -40,4 +44,4 @@ const dimensionsWidthHOC = (Component) => {
   
 }; //end (dimensionsWidthHOC)
 
-export  { dimensionsWidthHOC, navigationRef, navigate };
+export  { dimensionsWidthHOC, navigationRef, navigate, goBack };
