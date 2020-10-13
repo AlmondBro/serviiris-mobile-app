@@ -1,9 +1,10 @@
 import React from 'react';
 import { TouchableHighlight, StyleSheet } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
+import styled from 'styled-components/native';
 
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'; 
-import styled from 'styled-components/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 let LogInScreenContainerView = styled.View`
     flex: 1;
