@@ -25,7 +25,9 @@ import { dimensionsWidthHOC, navigationRef, navigate } from './../../utility-fun
 // import PageContent from './../PageContent/PageContent.js';
 // import TabsFooter from './../TabsFooter/TabsFooter.js'
 
-import LogInScreen from '../LogInScreen/LogInScreen.js';
+import LogInScreen from './../LogInScreen/LogInScreen.js';
+
+import MainScreen from './../MainScreen/MainScreen.js';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -137,17 +139,27 @@ class App extends Component {
                         <AppContainerView>
                             <Navigator
                                 headerMode      = "none"
-                                screenOptions   =   {  navigatorScreenOptions}
+                                screenOptions   =   { navigatorScreenOptions }
                             >
     
                                 <Screen 
                                     name="Home" 
-                                    // options={{ title: null, headerShown: false }}
                                 >
                                     { props => <LogInScreen 
                                                     {...props}
                                                     width               =   { this.state.appWidth}
                                                     authLoading         =   {   this.state.authLoading  }
+                                                /> 
+                                    }
+                                </Screen>
+                                <Screen 
+                                    name="Main" 
+                                    options={{ title: "Main", headerShown: true }}
+                                >
+                                    { props => <MainScreen 
+                                                    {...props}
+                                                    width               =   { this.state.appWidth}
+                                                    authLoading         =   {  this.state.authLoading  }
                                                 /> 
                                     }
                                 </Screen>

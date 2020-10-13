@@ -200,12 +200,12 @@ const SocialMediaButton = ({iconName, onPress,...props}) => {
     )
 };
 
-const LogInButton = ({ children,...props }) => {
+const LogInButton = ({ children, onPress, ...props }) => {
     return (
         <TouchableOpacity   
             activeOpacity={0.8}
             underlayColor="black"
-            onPress={() => alert('Pressed!')}
+            onPress={ onPress }
         >
             <LogInButtonContainer
             >

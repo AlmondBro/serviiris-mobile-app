@@ -9,7 +9,9 @@ import { LogInScreenContainerView, LogInScreenHeaderContainerView, CreateAccount
         SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText,RegisterTouchableText
     } from './LogInScreenStyledComponents.js';
 
-let LogInScreen = ({ width }) => {
+let LogInScreen = ({ width, navigation }) => {
+    const { navigate } = navigation;
+
     return (
         <LogInScreenContainerView>
                 <LogInScreenHeaderContainerView 
@@ -26,7 +28,11 @@ let LogInScreen = ({ width }) => {
                 <BottomHalfContainer>
                     <CreateAccountContainerArc/>
                     <CreateAccountContainer>
-                        <LogInButton>Iniciar Sesión</LogInButton>
+                        <LogInButton
+                            onPress={ () =>  navigate('Main') } 
+                        >
+                            Iniciar Sesión
+                        </LogInButton>
 
                         <RegisterWith width={width}>
                             o ingresa con
@@ -39,7 +45,7 @@ let LogInScreen = ({ width }) => {
                        </SocialMediaButtonContainer>
 
                         <AlreadyHaveAnAccountText>Ya tienes cuenta?</AlreadyHaveAnAccountText>
-                        <RegisterTouchableText>Regístrate</RegisterTouchableText>
+                        <RegisterTouchableText >Regístrate</RegisterTouchableText>
 
                     </CreateAccountContainer>
                 </BottomHalfContainer>
