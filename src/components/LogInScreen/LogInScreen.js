@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import { useIsFocused } from "@react-navigation/native";
+
 import * as Animatable from 'react-native-animatable';
 
 import IrisLogo from './iris-logo-original.svg';
@@ -9,14 +11,20 @@ import { LogInScreenContainerView, LogInScreenHeaderContainerView, CreateAccount
         SocialMediaButtonContainer, SocialMediaButton, AlreadyHaveAnAccountText,RegisterTouchableText
     } from './LogInScreenStyledComponents.js';
 
+
 let LogInScreen = ({ width, showAppHeader, showFooter, navigation, route }) => {
     const { navigate } = navigation;
 
+    const isFocused = useIsFocused();
+
     useEffect(() => {
-        showAppHeader(false);
-        showFooter(false);
+        if (isFocused) {
+            showAppHeader(false);
+            showFooter(false);
+        }
         console.log(route.name);
-    }, []);
+        
+    }, [ isFocused ]);
 
     return (
         <LogInScreenContainerView>

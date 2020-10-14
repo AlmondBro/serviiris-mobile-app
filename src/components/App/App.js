@@ -157,7 +157,6 @@ class App extends Component {
                             this.state.showAppHeader ? (
                                 <Header
                                     width   =   { this.state.appWidth }
-                                    goBack  =   { goBack }
                                 />
                             ) : null
                         }
@@ -201,7 +200,9 @@ class App extends Component {
                         </AppContainerView>
                         {
                             this.state.showFooter ? (
-                                <Footer/> 
+                                <Footer 
+                                    goBack  =   { goBack }
+                                /> 
                             ) : null
                         }
                     </SafeAreaViewStyled>
