@@ -42,7 +42,7 @@ const CreateAccountContainerArc = styled.View`
               
     position : absolute;
     left: 40%;
-    bottom: ${Platform.OS === 'ios' ? 290 : 270};
+    bottom: ${Platform.OS === 'ios' ? 290 : 260};
     /* 290 */
 
     background-color: #7A40DB;
