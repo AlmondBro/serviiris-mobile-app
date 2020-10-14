@@ -1,9 +1,7 @@
 import React, {  useEffect } from 'react';
 import { Text } from 'react-native';
 
-import { MainScreenContainerView } from './MainScreenStyledComponents.js';
-
-import Header from './../Header/Header.js';
+import { MainScreenContainerView, ButtonRow, SectionButton } from './MainScreenStyledComponents.js';
 
 const MainScreen = ({ navigation, showAppHeader, showFooter, route }) => {
     useEffect(() => {
@@ -14,7 +12,14 @@ const MainScreen = ({ navigation, showAppHeader, showFooter, route }) => {
 
     return (
         <MainScreenContainerView>
-            <Text>Main Screen</Text>
+            <ButtonRow>
+                <SectionButton fa5 iconName="box-open">Entrega de paquetes</SectionButton>
+                <SectionButton fa5 iconName="money-check-alt">Cosignaciones Bancarias</SectionButton>
+            </ButtonRow>
+            <ButtonRow>
+                <SectionButton fa5 iconName="utensils">Restaurantes</SectionButton>
+                <SectionButton fa5 iconName="shopping-cart">Mercado</SectionButton>
+            </ButtonRow>
         </MainScreenContainerView>
     ); //end return statement
 }; //end MainScreen
