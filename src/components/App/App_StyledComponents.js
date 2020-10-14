@@ -1,6 +1,8 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
+import Constants from 'expo-constants';
+
 let AppContainerView = styled.View`
     flex: 1;
 `;
@@ -35,11 +37,12 @@ let SafeAreaViewStyled = styled(SafeAreaView).attrs( (props) => ({
     margin: 0;
 `;
 
-const StatusBarSafeView = styled(SafeAreaView).attrs( (props) => ({
+const StatusBarSafeView = styled.View.attrs( (props) => ({
     // forceInset: { bottom: 'never' },
 }))`
     flex: 0;
     flex-direction: row;
+    height: ${Constants.statusBarHeight};
 
     background-color: red;
 `;

@@ -4,7 +4,6 @@ import { StatusBar } from 'expo-status-bar';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
-import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -137,75 +136,72 @@ class App extends Component {
 
         return (
             <Fragment>
-                {/* <StatusBarSafeView> */}
-                        <StatusBar 
-                            backgroundColor="white" //This property only works on Android
-                            barStyle="dark-content" 
-                            translucent={true} 
-                        />
-                {/* </StatusBarSafeView> */}
-                    <SafeAreaViewStyled>
+                <StatusBarSafeView>
+                    <StatusBar 
+                        backgroundColor="white" //This property only works on Android
+                        barStyle="light-content" 
+                        translucent={true} 
+                    />
+                </StatusBarSafeView>
+                <SafeAreaViewStyled>
+                    {
+                        this.state.showAppHeader ? (
+                            <Header
+                                width   =   { this.state.appWidth }
+                            />
+                        ) : null
+                    }       
+                    <NavigationContainer ref={navigationRef}>   
+                        { /* The following is a technique using two SafeAreaViews to have the
+                            statusbar/top padding be a different color than the bottom padding. 
+                            SafeAreaViews are only applicable on iOs 11+ on >iPhone X 
+
+                            Source: https://stackoverflow.com/questions/47725607/react-native-safeareaview-background-color-how-to-assign-two-different-backgro
+                        */ }
+                        <AppContainerView>
+                            <Navigator
+                                headerMode      = "none"
+                                screenOptions   =   { navigatorScreenOptions }
+                            >
+
+                                <Screen 
+                                    name="Home" 
+                                >
+                                    { props => <LogInScreen 
+                                                    {...props}
+                                                    width               =   { this.state.appWidth}
+                                                    authLoading         =   {   this.state.authLoading  }
+
+                                                    showAppHeader       =   { this.showAppHeader }
+                                                    showFooter          =   { this.showFooter }
+                                                /> 
+                                    }
+                                </Screen>
+                                <Screen 
+                                    name="Main" 
+                                    options={{ title: "Main", headerShown: true }}
+                                >
+                                    { props => <MainScreen 
+                                                    {...props}
+                                                    width               =   { this.state.appWidth}
+                                                    authLoading         =   {  this.state.authLoading  }
+
+                                                    showAppHeader       =   { this.showAppHeader }
+                                                    showFooter          =   { this.showFooter }
+
+                                                    ReactotronDebug     =   { ReactotronDebug }
+                                                /> 
+                                    }
+                                </Screen>
+                            </Navigator>
+                        </AppContainerView>
                         {
-                            this.state.showAppHeader ? (
-                                <Header
-                                    width   =   { this.state.appWidth }
-                                />
+                            this.state.showFooter ? (
+                                <Footer 
+                                    goBack  =   { goBack }
+                                /> 
                             ) : null
                         }
-                                
-                        <NavigationContainer ref={navigationRef}>
-                        
-                            
-                            { /* The following is a technique using two SafeAreaViews to have the
-                                statusbar/top padding be a different color than the bottom padding. 
-                                SafeAreaViews are only applicable on iOs 11+ on >iPhone X 
-
-                                Source: https://stackoverflow.com/questions/47725607/react-native-safeareaview-background-color-how-to-assign-two-different-backgro
-                            */ }
-                                <AppContainerView>
-                                    <Navigator
-                                        headerMode      = "none"
-                                        screenOptions   =   { navigatorScreenOptions }
-                                    >
-
-                                        <Screen 
-                                            name="Home" 
-                                        >
-                                            { props => <LogInScreen 
-                                                            {...props}
-                                                            width               =   { this.state.appWidth}
-                                                            authLoading         =   {   this.state.authLoading  }
-
-                                                            showAppHeader       =   { this.showAppHeader }
-                                                            showFooter          =   { this.showFooter }
-                                                        /> 
-                                            }
-                                        </Screen>
-                                        <Screen 
-                                            name="Main" 
-                                            options={{ title: "Main", headerShown: true }}
-                                        >
-                                            { props => <MainScreen 
-                                                            {...props}
-                                                            width               =   { this.state.appWidth}
-                                                            authLoading         =   {  this.state.authLoading  }
-
-                                                            showAppHeader       =   { this.showAppHeader }
-                                                            showFooter          =   { this.showFooter }
-
-                                                            ReactotronDebug     =   { ReactotronDebug }
-                                                        /> 
-                                            }
-                                        </Screen>
-                                    </Navigator>
-                                </AppContainerView>
-                                {
-                                    this.state.showFooter ? (
-                                        <Footer 
-                                            goBack  =   { goBack }
-                                        /> 
-                                    ) : null
-                                }
                     </NavigationContainer>
                 </SafeAreaViewStyled>
             </Fragment>
