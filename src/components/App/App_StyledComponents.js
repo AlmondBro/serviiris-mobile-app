@@ -37,14 +37,14 @@ let SafeAreaViewStyled = styled(SafeAreaView).attrs( (props) => ({
     margin: 0;
 `;
 
-const StatusBarSafeView = styled.View.attrs( (props) => ({
+const StatusBarSafeView = styled(SafeAreaView).attrs( (props) => ({
     // forceInset: { bottom: 'never' },
 }))`
     flex: 0;
     flex-direction: row;
     height: ${Constants.statusBarHeight};
 
-    background-color: red;
+    background-color: white;
 `;
 
 export { StatusBarSafeView, AppContainerView, AppHeaderContainerView, SafeAreaViewStyled, BlueSectionContainer };
