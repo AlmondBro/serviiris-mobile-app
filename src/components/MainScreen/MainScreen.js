@@ -1,14 +1,18 @@
 import React, {  useEffect } from 'react';
-import { Text } from 'react-native';
+import { useIsFocused } from "@react-navigation/native";
 
 import { MainScreenContainerView, ButtonRow, SectionButton } from './MainScreenStyledComponents.js';
 
 const MainScreen = ({ navigation, showAppHeader, showFooter, route }) => {
+    const isFocused = useIsFocused();
+
     useEffect(() => {
-        showAppHeader(true);
-        showFooter(true);
+        if (isFocused) {
+            showAppHeader(true);
+            showFooter(true);
+        }
         console.log(route.name);
-    }, []);
+    }, [ isFocused ]);
 
     return (
         <MainScreenContainerView>

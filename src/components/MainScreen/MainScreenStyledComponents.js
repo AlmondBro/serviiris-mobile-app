@@ -49,7 +49,7 @@ const ButtonName = styled.Text`
 const SectionButton = ({ iconName, onPress, fa5, children }) => {
     return (
         <TouchableHighlight
-            activeOpacity={0.8}
+            activeOpacity={0.2}
             underlayColor="black"
             onPress={ onPress }
         >

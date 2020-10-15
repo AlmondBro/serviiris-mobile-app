@@ -9,6 +9,8 @@ const HeaderContainer = styled.View`
     flex-direction: row;
     justify-content: space-between;
 
+    padding-top:5;
+
     width: ${props => props.width} ;
     background-color: white;
 

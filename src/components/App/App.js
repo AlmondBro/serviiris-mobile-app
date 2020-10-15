@@ -1,10 +1,9 @@
 //Import React/React Native modules
-import React, { Component } from 'react';
+import React, { Fragment,  Component } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
-import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -15,7 +14,7 @@ import * as Updates from 'expo-updates';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 //import styled components
-import { AppContainerView, SafeAreaViewStyled,StatusBarView } from './App_StyledComponents.js';
+import { AppContainerView, SafeAreaViewStyled, StatusBarSafeView } from './App_StyledComponents.js';
 
 //Import utility functions
 import { dimensionsWidthHOC, navigationRef, navigate, goBack } from './../../utility-functions.js';
@@ -136,38 +135,35 @@ class App extends Component {
         }; 
 
         return (
-            <NavigationContainer ref={navigationRef}>
-                <SafeAreaProvider>
-                    <StatusBarView>
-                        <StatusBar 
-                            backgroundColor="#00000" 
-                            barStyle="light-content" 
-                            translucent={true} 
-                        />
-                    </StatusBarView>
-                  
-                    { /* The following is a technique using two SafeAreaViews to have the
-                        statusbar/top padding be a different color than the bottom padding. 
-                        SafeAreaViews are only applicable on iOs 11+ on >iPhone X 
+            <Fragment>
+                <StatusBarSafeView>
+                    <StatusBar 
+                        backgroundColor="white" //This property only works on Android
+                        barStyle="light-content" 
+                        translucent={true} 
+                    />
+                </StatusBarSafeView>
+                <SafeAreaViewStyled>
+                    {
+                        this.state.showAppHeader ? (
+                            <Header
+                                width   =   { this.state.appWidth }
+                            />
+                        ) : null
+                    }       
+                    <NavigationContainer ref={navigationRef}>   
+                        { /* The following is a technique using two SafeAreaViews to have the
+                            statusbar/top padding be a different color than the bottom padding. 
+                            SafeAreaViews are only applicable on iOs 11+ on >iPhone X 
 
-                        Source: https://stackoverflow.com/questions/47725607/react-native-safeareaview-background-color-how-to-assign-two-different-backgro
-                    */ }
-                    <SafeAreaViewStyled>
-                        {
-                            this.state.showAppHeader ? (
-                                <Header
-                                    width   =   { this.state.appWidth }
-                                    goBack  =   { goBack }
-                                />
-                            ) : null
-                        }
-                       
+                            Source: https://stackoverflow.com/questions/47725607/react-native-safeareaview-background-color-how-to-assign-two-different-backgro
+                        */ }
                         <AppContainerView>
                             <Navigator
                                 headerMode      = "none"
                                 screenOptions   =   { navigatorScreenOptions }
                             >
-    
+
                                 <Screen 
                                     name="Home" 
                                 >
@@ -201,12 +197,14 @@ class App extends Component {
                         </AppContainerView>
                         {
                             this.state.showFooter ? (
-                                <Footer/> 
+                                <Footer 
+                                    goBack  =   { goBack }
+                                /> 
                             ) : null
                         }
-                    </SafeAreaViewStyled>
-                </SafeAreaProvider>
-            </NavigationContainer>
+                    </NavigationContainer>
+                </SafeAreaViewStyled>
+            </Fragment>
         ); //end return statement
     } //end render() function
 } //end App class

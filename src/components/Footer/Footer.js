@@ -3,12 +3,13 @@ import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 
 import { ContainerView, Button}  from './FooterStyledComponents.js';
 
-const Footer = ({ ...props }) => {    
+const Footer = ({ goBack }) => {    
     return (
         <ContainerView>
             <Button  
                 activeOpacity   =   {  0.5 }
-                noBorder        
+                onPress =  { goBack }
+                noBorder     
             >
                 <FontAwesome 
                     name    =   "home"

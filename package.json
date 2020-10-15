@@ -43,7 +43,8 @@
     "react-native-webview": "10.7.0",
     "styled-components": "^5.1.0",
     "styled-css": "^1.1.0",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "expo-constants": "~9.2.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
