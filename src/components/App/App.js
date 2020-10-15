@@ -136,14 +136,14 @@ class App extends Component {
 
         return (
             <Fragment>
-                <StatusBarSafeView>
+                <StatusBarSafeView edges={['top']}>
                     <StatusBar 
                         backgroundColor="white" //This property only works on Android
                         barStyle="light-content" 
                         translucent={true} 
                     />
                 </StatusBarSafeView>
-                <SafeAreaViewStyled>
+                <SafeAreaViewStyled edges={['left', 'right', 'bottom']}>
                     {
                         this.state.showAppHeader ? (
                             <Header
