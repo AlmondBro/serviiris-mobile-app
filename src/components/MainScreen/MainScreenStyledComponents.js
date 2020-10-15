@@ -49,9 +49,9 @@ const ButtonName = styled.Text`
 const SectionButton = ({ iconName, onPress, fa5, children }) => {
     return (
         <TouchableHighlight
-            activeOpacity={0.2}
-            underlayColor="black"
-            onPress={ onPress }
+            activeOpacity={0.5}
+            underlayColor="white"
+            onPress={ () => console.log("ButtonPressed") }
         >
             <View>
                 <SocialMediaIconContainer>
